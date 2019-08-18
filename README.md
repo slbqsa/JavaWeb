@@ -32,3 +32,5 @@ alter table user_info change name name varchar(64) character set utf8;
 ```
 ### 基本流程
 dataobject层：数据的存储和到service层的传输
+### 用户信息管理
+使用otp短信获取注册和登录
