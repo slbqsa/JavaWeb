@@ -1,16 +1,19 @@
 package com.onlineshoppingmall.controller;
 
+import com.alibaba.druid.util.StringUtils;
 import com.onlineshoppingmall.controller.Viewer.UserViewer;
 import com.onlineshoppingmall.error.EmError;
 import com.onlineshoppingmall.error.IllegalException;
 import com.onlineshoppingmall.reply.CommonReply;
 import com.onlineshoppingmall.service.UserService;
 import com.onlineshoppingmall.service.model.UserModel;
+import org.apache.tomcat.util.security.MD5Encoder;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import sun.security.provider.MD5;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -25,7 +28,37 @@ public class UserController extends BaseController {
     @Autowired
     private HttpServletRequest httpServletRequest;
 
-    @RequestMapping("getotpnum")
+    /**
+     * 新用户注册
+     * @param phonenum
+     * @return
+     */
+    @RequestMapping(value = "/register",method = {RequestMethod.POST},consumes = {CONTENT_TYPE_FORMED})
+    @ResponseBody
+    public CommonReply register(@RequestParam(name = "phonenum")String phonenum,
+                                @RequestParam(name = "otpCode")String otpCode,
+                                @RequestParam(name = "name")String name,
+                                @RequestParam(name = "gender")Byte gender,
+                                @RequestParam(name = "age")Integer age,
+                                @RequestParam(name = "encrptPasswd")String encrptPasswd
+                                )throws IllegalException{
+       String SessionOtp = (String) this.httpServletRequest.getSession().getAttribute(phonenum);
+       if(!com.alibaba.druid.util.StringUtils.equals(otpCode,SessionOtp)){
+           throw new IllegalException(EmError.ILLEGAL_VALUED,"短信验证码不存在");
+       }
+       UserModel userModel = new UserModel();
+       userModel.setName(name);
+       userModel.setGender(gender);
+       userModel.setAge(age);
+       userModel.setPhonenum(phonenum);
+       userModel.setMeans("byphone");
+       userModel.setEncrptPasswd(MD5Encoder.encode(encrptPasswd.getBytes()));
+       userService.register(userModel);
+        return CommonReply.create(null);
+    }
+
+
+    @RequestMapping(value = "getotpnum",method = {RequestMethod.POST},consumes = {CONTENT_TYPE_FORMED})
     @ResponseBody
     public CommonReply getOtpnum(@RequestParam(name = "phonenum")String phonenum){
         /**
