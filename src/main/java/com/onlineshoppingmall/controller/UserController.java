@@ -1,6 +1,5 @@
 package com.onlineshoppingmall.controller;
 
-import com.alibaba.druid.util.StringUtils;
 import com.onlineshoppingmall.controller.Viewer.UserViewer;
 import com.onlineshoppingmall.error.EmError;
 import com.onlineshoppingmall.error.IllegalException;
@@ -10,14 +9,13 @@ import com.onlineshoppingmall.service.model.UserModel;
 import org.apache.tomcat.util.security.MD5Encoder;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-import sun.security.provider.MD5;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 @Controller("user")
