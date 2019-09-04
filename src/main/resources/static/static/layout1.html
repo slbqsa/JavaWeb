@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="keywords" content="">
+	    <meta name="description" content="">
+	    <meta name="author" content="zhengliangquan,ozh.nextinside@gmail.com">
+	    
+		<title>layout1</title>
+		<!--BASE CSS-->
+		<link rel="stylesheet" href="css/base/base.css" />
+		<link rel="stylesheet" href="css/base/responsive.css" />
+		<!--STATE CSS-->
+		<link rel="stylesheet" href="css/state/state.css" />
+		<!--MODULE CSS-->
+		<link rel="stylesheet" href="css/module/plugins/iconfont/iconfont.css" />
+		<link rel="stylesheet" href="css/module/input.css" />
+		<!--LAYOUT CSS-->
+		<link rel="stylesheet" href="css/layout/header.css" />
+		<link rel="stylesheet" href="css/layout/layout-template/layout1.css"/>
+		<style>
+			html{
+				background-image:url('./beijing.jpg');
+				background-attachment: fixed;
+			}
+			.fr1{
+				transition-property: weight;
+        		transition: 2s;
+        		height: 90px;
+        		width: 143px;
+        		overflow: hidden;
+				margin-top: -4%;
+				display: block;
+			}
+			.fr{
+        		height: 90px;
+        		width: 143px;
+        		overflow: hidden;
+				margin-top: -4%;
+				display: block;
+			}
+
+			#div1{
+        		height: auto;
+        		width:100px;
+    		}
+			.fr1:hover{height: 300px;}
+			.bb{
+				display: block;
+    			margin-top: 6px;
+			}
+			.login{
+				margin-top: 0%;
+    			font-size: 26px;
+    			display: block;
+    			margin-bottom: 0%;
+			}
+			.register{
+				margin-top: 1%;
+    			font-size: 26px;
+    			display: block;
+    			margin-bottom: 3%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header id="header" class="bb" style="margin-top: 1%;">
+			<div class="container p0_32">
+				<div class="row clearfix">
+					<div class="" style="width: auto;">
+						<!--logo-->
+					<div class="column third logo text-align-left" style="display: inline-block; margin-top: 0%;width: 10%;">
+						<div class="logo-img bg-dark-green inline-block"></div>
+						<h1 class="logo-name dark-green inline-block p0_15">蛋壳</h1>
+					</div>
+						<!--searchBox-->
+					<div class="column third searchBox" style="display:inline-block;margin-left: 32%;width: auto;margin-top: 0%;">
+						<form action="" id="search" class="clearfix" style="margin-left: -226px;margin-top: -2%;">
+							<div class="column inline-block">
+								<input width="width: 83%;" type="text" placeholder="搜索关键词、App名称" class="search-area border"/>
+								<!-- <i class="iconfont search-icon bg-dark-green p6_11">&#xe60c;</i> -->
+							</div>
+						</form>
+					</div>
+					</div>
+						<!--login-->
+					<ul class="column third login text-align-right">
+						<li class="fr fr1" id="hh">
+							<!--logout-->
+							<h5 class="logout-area dark-gray is-hidden">
+								<a href="#" style="font-weight: bold;">登录/注册</a>
+							</h5>
+							<!--login-->
+							<img class="login-area p16_0" src="img/default_avatar.png"/>
+							<!--Menu-->
+							<ul id="div1" class="main-menu border text-align-left is-hidden" style="text-align: right;margin-left: 10%;font-size: 15px;">
+								<li class="bb"><a href="#">我喜欢的截图</a></li>
+								<li class="bb"><a href="#">我订阅的APP</a></li>
+								<li class="bb"><a href="#">个人设置</a></li>
+								<li class="bb"><a href="#">标签管理</a></li>
+								<li class="bb"><a href="#">APP截图管理</a></li>
+								<li class="bb"><a href="#">用户管理</a></li>
+								<li class="bb"><a href="#">权限管理</a></li>
+								<li><a href="#">退出登录</a></li>
+							</ul>
+						</li>
+						<li class="fr" style="margin-left: 0%;display:inline-block;">
+							<h5 class="faq dark-gray">
+								<a href="#" style="font-weight: bold;">联系我们</a>
+							</h5>
+						</li>
+						<li class="fr" style="margin-left: 0%;display:inline-block;">
+								<h5 class="faq dark-gray">
+									<a href="#" style="font-weight: bold;">联系我们</a>
+								</h5>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		
+		<div id="main-content" class="main-content">
+			<div class="container p0_32 columu text-align-center">
+				<div class="row clearfix">
+					<!--LOGIN-->
+					<form id="form-login" class="" style="background-color: black; opacity:0.5; border-radius: 20px;height: 40%; width: 70%;margin-left: 15%;">
+						<p  class="" style="margin-top: -4%;font-size: 26px;display:block;margin-bottom: 3%;">Login</p>
+						<div class="column form-group mb28">
+							<input type="text" placeholder="登陆用户名" class="input-area border"/>
+						</div>
+						<div class="column form-group mb28">
+							<input type="password" placeholder="密码" class="input-area border"/>
+						</div>
+						<div class="column form-group mb28 text-align-left">
+							<input type="submit"class="btn bg-dark-green" value="登录"/>
+						</div>
+						<div class="column form-group mb12 text-align-left">
+							<a href="#" class="go-to-register">注册</a>
+						</div>
+						<div class="column form-group mb12 text-align-left">
+							<a href="#" class="go-to-register forget-password">忘记密码？</a>
+						</div>
+						<div class="column form-group text-align-left">
+							<a href="#" class="go-to-register unreceive-email">没有收到验证邮件？</a>
+						</div>
+					</form>
+					<!--REGISTER-->
+					<form id="form-register" class="" style="background-color: black; opacity:0.5;margin-top: 20px;border-radius: 20px; height: 50%;width: 70%;margin-left: 15%;">
+						<p class="register">register</p>
+						<div class="column form-group mb28 text-align-left">
+							<label for="email">登录登陆用户名</label>
+							<input type="text" placeholder="输入登陆用户名" name="email" class="input-area border"/>
+						</div>
+						<div class="column form-group mb28 text-align-left">
+							<label for="password" class="">密码</label>
+							<input type="password" placeholder="至少6位" name="password" class="input-area border"/>
+						</div>
+						<div class="column form-group mb28 text-align-left">
+							<label for="nickname" class="">昵称</label>
+							<input type="text" placeholder="昵称" name="nickname" class="input-area border"/>
+						</div>
+						<div class="column form-group mb28 text-align-left">
+							<label for="avatar" class="">图像</label>
+							<div class="row">
+								<div class="thumbnail border inline-block" style='width: 182px;height: 182px;'>
+									<img src="http://www.placehold.it/180x180/EFEFEF/AAAAAA&text=no+image" alt="" class="img fileinput-new" />
+									<img src="" alt="" class="img fileinput-exists is-hidden" />
+								</div>
+								<span class="btn-file">
+									<em class="fileinput-new"></em>
+									<em class="fileinput-exists is-hidden"></em>
+									<input type="file" name="avatar" class=""/>
+								</span>
+								<!--<input type="file" name="avatar" class="fileinput" />-->
+							</div>
+						</div>
+						<div class="column form-group mb28 text-align-left">
+							<input type="submit"class="btn bg-dark-green" value="完成注册"/>
+						</div>
+						<div class="column form-group text-align-left" style="margin-bottom:10px;">
+							<!-- <a href="#" class="go-to-login">登录</a> -->
+						</div>
+					</form>
+					<!--SEND EMAIL AGAIN-->
+					<form id="form-send-email-again">
+						<div class="column mb132">
+							<h5>
+								您的账户还未激活，请登录您的登陆用户名yokyi@163.com点击<br />激活链接，激活您的账户以后，才能进一步使用我们的服务。
+							</h5>
+						</div>
+						<div class="column form-group mb40">
+							<input type="submit"class="btn bg-dark-green" value="重发激活邮件"/>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<footer id="footer" class="footer text-align-center">
+			版权
+		</footer>
+		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/plugins/fileinput/fileinput.js"></script>
+		<script type="text/javascript">
+		</script>
+	</body>
+	<script type="text/javascript">
+		
+	</script>
+</html>
