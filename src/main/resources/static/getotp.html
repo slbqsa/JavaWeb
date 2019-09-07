@@ -29,11 +29,9 @@
 <script>
     //页面渲染
     jQuery(document).ready(function(){
-
         //绑定otp的click事件用于向后端发送获取手机验证码请求
         $("#getotp").on("click",function(){
             var phonenum = $("#phonenum").val();
-
             if(phonenum == null || phonenum == ""){
                 alert("手机号不能为空");
                 return false;
@@ -45,11 +43,11 @@
                 data:{
                     "phonenum":$("#phonenum").val(),
                 },
-               // xhrFields:{withCredentials:true},
+                // xhrFields:{withCredentials:true},
                 success:function(data){
                     if(data.status == "success"){
                         alert("otp已经发送到了手机，请注意查收");
-                        window.location.href="/home/fengyuanyuan/IdeaProjects/JavaWeb/shop/src/main/resources/static/register.html";
+                        window.location.href="register.html";
                     } else {
                         alert("otp发送失败，原因为" + data.data.errMsg);
                     }

@@ -92,8 +92,6 @@
                 alert("姓名不能为空");
                 // return false;
             }
-
-
             $.ajax({
                 type:"POST",
                 contentType:"application/x-www-form-urlencoded",
@@ -110,7 +108,6 @@
                 },
                 success:function (data) {
                     if(data.status == "success"){
-
                         alert("注册成功！");
                     } else {
                         alert("注册失败!原因："+data.data.errMsg);
