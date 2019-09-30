@@ -1,5 +1,10 @@
 package com.onlineshoppingmall.service.model;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 /**
  * id int auto_increment,
  * 	name varchar(64) not null,
@@ -11,6 +16,7 @@ package com.onlineshoppingmall.service.model;
  */
 public class UserModel {
     private Integer id;
+    @NotBlank(message = "用户名不能为空")
     private String name;
 
     public Integer getId() {
@@ -68,12 +74,17 @@ public class UserModel {
     public void setId_three(String id_three) {
         this.id_three = id_three;
     }
-
+@NotNull(message = "性别不能为空")
     private Byte gender;
+    @NotNull(message = "年龄不能为空")
+    @Min(value = 0,message = "年龄输入有误")
+    @Max(value = 200,message = "年龄输入错误")
     private Integer age;
+    @NotBlank(message = "手机号不能为空")
     private String phonenum;
     private String means;
     private String id_three;
+    @NotBlank(message = "密码不能为空")
     private String encrptPasswd;
 
     public String getEncrptPasswd() {

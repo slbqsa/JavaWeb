@@ -34,3 +34,27 @@ alter table user_info change name name varchar(64) character set utf8;
 dataobject层：数据的存储和到service层的传输
 ### 用户信息管理
 使用otp短信获取注册和登录
+```sql
+create table item_stock
+(
+  id int auto_increment,
+  stock int default 0 not null,
+  item_id int default 0 null,
+  constraint item_stock_pk
+    primary key (id)
+);
+```
+```sql
+
+create table item
+(
+	id int not null,
+	title varchar(64) default '' not null,
+	price decimal default 0 not null,
+	description varchar(500) default '' not null,
+	sales int not null,
+	img_url varchar(0) default '' not null,
+	constraint item_pk
+		primary key (id)
+);
+```

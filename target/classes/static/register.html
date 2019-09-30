@@ -2,9 +2,6 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <link href="static/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="static/assets/global/css/components.css" rel="stylesheet" type="text/css"/>
     <link href="static/assets/admin/pages/css/login.css" rel="stylesheet" type="text/css"/>
@@ -91,22 +88,26 @@
                 alert("验证码不能为空");
                 return false;
             }
-
-
+            if(name == null || name == ""){
+                alert("姓名不能为空");
+                // return false;
+            }
             $.ajax({
                 type:"POST",
                 contentType:"application/x-www-form-urlencoded",
-                url:"http://localhost:8080/user/getotpnum",
+                url:"http://localhost:8080/user/register",
                 data:{
-                    "phonenum":$("#phonenum").val(),
+                    "phonenum":phonenum,
                     "encrptPasswd":encrptPasswd,
                     "age":age,
                     "gender":gender,
                     "otpCode":otpCode
                 },
+                xhrFields:{
+                    withCredentials:true
+                },
                 success:function (data) {
                     if(data.status == "success"){
-
                         alert("注册成功！");
                     } else {
                         alert("注册失败!原因："+data.data.errMsg);

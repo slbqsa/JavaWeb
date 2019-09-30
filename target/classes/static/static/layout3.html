@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="keywords" content="">
+	    <meta name="description" content="">
+	    <meta name="author" content="zhengliangquan,ozh.nextinside@gmail.com">
+	    
+		<title>layout3</title>
+		<!--BASE CSS-->
+		<link rel="stylesheet" href="css/base/base.css" />
+		<link rel="stylesheet" href="css/base/responsive.css" />
+		<!--STATE CSS-->
+		<link rel="stylesheet" href="css/state/state.css" />
+		<!--MODULE CSS-->
+		<link rel="stylesheet" href="css/module/plugins/iconfont/iconfont.css" />
+		<link rel="stylesheet" href="css/module/input.css" />
+		<link rel="stylesheet" href="css/module/panel.css" />
+		<link rel="stylesheet" href="css/module/tab.css" />
+		<!--LAYOUT CSS-->
+		<link rel="stylesheet" href="css/layout/header.css" />
+		<link rel="stylesheet" href="css/layout/layout-template/layout3.css"/>
+		<style>
+				html{
+					background-image:url('./beijing.jpg');
+					background-attachment: fixed;
+				}
+				.fr1{
+					transition-property: weight;
+					transition: 2s;
+					height: 90px;
+					width: 143px;
+					overflow: hidden;
+					margin-top: -4%;
+					display: block;
+				}
+				.fr{
+					height: 90px;
+					width: 143px;
+					overflow: hidden;
+					margin-top: -4%;
+					display: block;
+				}
+	
+				#div1{
+					height: auto;
+					width:100px;
+				}
+				.fr1:hover{height: 300px;}
+				.bb{
+					display: block;
+					margin-top: 6px;
+				}
+				.login{
+					margin-top: 0%;
+					font-size: 26px;
+					display: block;
+					margin-bottom: 0%;
+				}
+				.register{
+					margin-top: 1%;
+					font-size: 26px;
+					display: block;
+					margin-bottom: 3%;
+				}
+		</style>
+	</head>
+	<body>
+			<header id="header" class="bb" style="margin-top: 1%;">
+					<div class="container p0_32">
+						<div class="row clearfix">
+							<div class="" style="width: auto;">
+								<!--logo-->
+							<div class="column third logo text-align-left" style="display: inline-block; margin-top: 0%;width: 10%;">
+								<div class="logo-img bg-dark-green inline-block"></div>
+								<h1 class="logo-name dark-green inline-block p0_15">蛋壳</h1>
+							</div>
+								<!--searchBox-->
+							<div class="column third searchBox" style="display:inline-block;margin-left: 32%;width: auto;margin-top: 0%;">
+								<form action="" id="search" class="clearfix" style="margin-left: -226px;margin-top: -2%;">
+									<div class="column inline-block">
+										<input width="width: 83%;" type="text" placeholder="搜索关键词、App名称" class="search-area border"/>
+										<!-- <i class="iconfont search-icon bg-dark-green p6_11">&#xe60c;</i> -->
+									</div>
+								</form>
+							</div>
+							</div>
+								<!--login-->
+							<ul class="column third login text-align-right">
+								<li class="fr fr1" id="hh">
+									<!--logout-->
+									<h5 class="logout-area dark-gray is-hidden">
+										<a href="#" style="font-weight: bold;">登录/注册</a>
+									</h5>
+									<!--login-->
+									<img class="login-area p16_0" src="img/default_avatar.png"/>
+									<!--Menu-->
+									<ul id="div1" class="main-menu border text-align-left is-hidden" style="text-align: right;margin-left: 10%;font-size: 15px;">
+										<li class="bb"><a href="#">我喜欢的截图</a></li>
+										<li class="bb"><a href="#">我订阅的APP</a></li>
+										<li class="bb"><a href="#">个人设置</a></li>
+										<li class="bb"><a href="#">标签管理</a></li>
+										<li class="bb"><a href="#">APP截图管理</a></li>
+										<li class="bb"><a href="#">用户管理</a></li>
+										<li class="bb"><a href="#">权限管理</a></li>
+										<li><a href="#">退出登录</a></li>
+									</ul>
+								</li>
+								<li class="fr" style="margin-left: 0%;display:inline-block;">
+									<h5 class="faq dark-gray">
+										<a href="#" style="font-weight: bold;">联系我们</a>
+									</h5>
+								</li>
+								<li class="fr" style="margin-left: 0%;display:inline-block;">
+										<h5 class="faq dark-gray">
+											<a href="#" style="font-weight: bold;">联系我们</a>
+										</h5>
+								</li>
+							</ul>
+						</div>
+					</div>
+			</header>
+		
+		<div id="main-content" class="main-content">
+			<div class="container p0_32 columu text-align-center">
+				<div class="row clearfix">
+					<!--PANEL-->
+					<div class="panel column">
+						<div class="row panel-header p23_0 clearfix">
+							<div class="column half text-align-left">
+								<i class="iconfont arrowLeft inline-block">&#xe601;</i>
+								<h4 class='panel-title inline-block'><span class="color-bdbdbd">权限管理</span> / 配置权限</h4>
+							</div>
+						</div>
+						<div class="row panel-body">
+							<!--TAB-->
+							<ul class="column tab-header">
+								<li class='tab-active'>普通用户(112)</li>
+								<li>内容管理员(3)</li>
+								<li>超级管理员(1)</li>
+							</ul>
+							<table class="column tab-content border" id="tab-content-1">
+								<tr class="row clearfix bb">
+									<td class="column half text-align-left">
+										<input type="checkbox" checked="" name="check-or-not" id="authority_1" class="authority is-hidden"/>
+										<h4 class="inline-block " style="margin-left: 4%;margin-top: 1%;">查看APP</h4>
+									</td>
+								</tr>
+								<!--<tr class="row clearfix bb">
+									<td class="column half text-align-left">
+										<input type="checkbox" name="check-or-not" id="authority_2" class="authority is-hidden"/>
+										<label class="iconfont check inline-block" for='authority_2'>&#xe646;</label>
+										<label class="iconfont checked dark-green inline-block is-hidden" for='authority_2'>&#xe639;</label>
+										<h4 class="inline-block ">新增APP</h4>
+									</td>
+								</tr>-->
+							</table>
+							<table class="column tab-content border is-hidden" id="tab-content-2">
+								<tr class="row clearfix bb">
+									<td class="column half text-align-left">
+										<input type="checkbox" checked="" name="check-or-not" id="authority_3" class="authority is-hidden"/>
+										<h4 class="inline-block " style="margin-left: 4%;margin-top: 1%;">查看APP</h4>
+									</td>
+								</tr>
+								<tr class="row clearfix bb">
+									<td class="column half text-align-left">
+										<input type="checkbox" name="check-or-not" id="authority_4" class="authority is-hidden" style="margin-left: 0%;position: absolute;margin-top: 1%;"/>
+										<h4 class="inline-block " style="margin-left: 4%;margin-top: 1%;">新增APP</h4>
+									</td>
+								</tr>
+							</table>
+							<table class="column tab-content border is-hidden" id="tab-content-3">
+								<tr class="row clearfix bb">
+									<td class="column half text-align-left">
+										<input type="checkbox" checked="" name="check-or-not" id="authority_5" class="authority is-hidden" style="margin-left: 0%;position: absolute;margin-top: 1%;"/>
+										<h4 class="inline-block " style="margin-left: 4%;margin-top: 1%;">查看APP</h4>
+									</td>
+								</tr>
+								<tr class="row clearfix bb">
+									<td class="column half text-align-left">
+										<input type="checkbox" name="check-or-not" id="authority_6" class="authority is-hidden" style="margin-left: 0%;position: absolute;margin-top: 1%;"/>
+										<h4 class="inline-block " style="margin-left: 4%;margin-top: 1%;">删除APP</h4>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<footer id="footer" class="footer text-align-center">
+			版权
+		</footer>
+		
+		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+		<script>
+			$(document).on('click','.tab-header li',function(){
+				$(this).addClass('tab-active').siblings().removeClass('tab-active');
+			});
+		</script>
+	</body>
+	
+</html>

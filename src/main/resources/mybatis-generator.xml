@@ -34,17 +34,29 @@
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
         <!--生成的表-->
-        <table tableName="user_info" domainObjectName="UserDo"
+        <!--<table tableName="user_info" domainObjectName="UserDo"-->
+               <!--enableCountByExample="false"-->
+               <!--enableUpdateByExample = "false"-->
+               <!--enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"-->
+               <!--selectByExampleQueryId = "false"></table>-->
+        <!--<table tableName="passwd" domainObjectName="PasswdDo"-->
+               <!--enableCountByExample="false"-->
+               <!--enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false"></table>-->
+        <table tableName="item" domainObjectName="ItemDO"
                enableCountByExample="false"
                enableUpdateByExample = "false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId = "false"></table>
-        <table tableName="passwd" domainObjectName="PasswdDo"
+        <table tableName="item_stock" domainObjectName="ItemStockDO"
                enableCountByExample="false"
-               enableUpdateByExample="false"
+               enableUpdateByExample = "false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
-               selectByExampleQueryId="false"></table>
+               selectByExampleQueryId = "false"></table>
     </context>
 </generatorConfiguration>

@@ -57,7 +57,24 @@
       <artifactId>commons-lang3</artifactId>
       <version>3.7</version>
     </dependency>
-
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>6.0.14.Final</version>
+    </dependency>
+    <!--
+    <dependency>
+      <groupId>com.sun.misc</groupId>
+      <artifactId>javax.misc</artifactId>
+      <version></version>
+    </dependency>
+-->
+    <!--joda-->
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>2.9.1</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -92,7 +109,7 @@
           <configuration>
             <verbose>true</verbose>
             <!--自动覆盖，谨慎设置-->
-            <overwrite>true</overwrite>
+            <overwrite>false</overwrite>
             <configurationFile>src/main/resources/mybatis-generator.xml</configurationFile>
           </configuration>
         </plugin>
